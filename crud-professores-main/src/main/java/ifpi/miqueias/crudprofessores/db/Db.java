@@ -5,9 +5,9 @@ import java.sql.*;
 // Classe que se conecta ao banco de dados via JDBC
 public class Db {
 
-    private static String url = "";
-    private static String user = "";
-    private static String password = "";
+    private static String url = "jdbc:postgresql://localhost/BDprofessores";
+    private static String user = "postgres";
+    private static String password = "123456";
 
     private static Connection conn = null;
 
