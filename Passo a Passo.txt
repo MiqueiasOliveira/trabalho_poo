@@ -1,0 +1,38 @@
+Participantes: Bruno Binga; Miqueias Oliveira Ramos;
+
+
+1 - Baixar e instalar postgreSQL e abrir PGAdmin
+    https://www.postgresql.org/
+
+2 - criar base de dados
+
+    Databases - > create database, Name = BDprofessores, Owner = postgres
+
+3 - Criar tabelas professor: 
+selecione no PGAdmin a conexao BPprofessores e procure por Schemas, vá em table e new table, cole o script abaixo e salve. 
+CREATE TABLE professor (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL DEFAULT 'N/A',
+	matricula VARCHAR(25) NOT NULL DEFAULT 'N/A',
+	disciplina VARCHAR(25) DEFAULT NULL
+);
+
+
+3 - conectar o banco de dados no Db.java
+
+Procurar o arquivo Db.java na pasta "db"
+Abrir esse arquivo que terá as seguintes linhas:
+
+    private static String url = "";
+    private static String user = "";
+    private static String password = "";
+
+você troca por
+ 
+    private static String url = "jdbc:postgresql://localhost/(O NOME DA CONEXÃO DO BANCO DE DADOS QUE VOCÊ VAI CRIAR)"; no caso "BDProfessores"
+    private static String user = "postgres"; // nome de usuário
+    private static String password = "(A SENHA QUE VOCÊ CONFIGUROU NO MYSQL)";
+
+Rodar o programa na classe Main.java e testar.
+> src/main.java
+
